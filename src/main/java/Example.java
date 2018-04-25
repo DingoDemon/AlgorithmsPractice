@@ -1,8 +1,7 @@
 import edu.princeton.cs.algs4.*;
-import edu.princeton.cs.algs4.Selection;
 
 public class Example {
-   public static boolean less(Comparable v, Comparable w) {
+    public static boolean less(Comparable v, Comparable w) {
         return v.compareTo(w) <= 0;
     }
 
@@ -47,7 +46,6 @@ public class Example {
 //        System.out.println((-2)>>>1);
 //        System.out.println(Integer.MAX_VALUE);
 //        System.out.println(3&5);
-
 
 
     }

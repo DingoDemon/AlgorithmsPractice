@@ -1,4 +1,4 @@
-import static com.company.Example.less;
+
 
 public class MergeByMyself {
 
@@ -11,7 +11,7 @@ public class MergeByMyself {
 
         System.arraycopy(a, 0, temp, 0, a.length);
         while ((index1 <= mid) && (index2 <= hi)) {
-            if (less(temp[index1], temp[index2]))
+            if (Example.less(temp[index1], temp[index2]))
                 a[i++] = temp[index1++];
             else
                 a[i++] = temp[index2++];
