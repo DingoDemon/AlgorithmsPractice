@@ -1,4 +1,8 @@
+import BinarySearchTree.BST;
+import BinarySearchTree.BSTNode;
 import edu.princeton.cs.algs4.*;
+
+import java.util.Random;
 
 public class Example {
     public static boolean less(Comparable v, Comparable w) {
@@ -39,13 +43,32 @@ public class Example {
 
     public static void main(String[] args) {
 //        int[] a = new int[]{4, 7, 1, 23, 9, 0, 54, 4, 11, 22, 31, 42, 55};
-        Integer[] b = new Integer[]{99, 101, 2, 66, 11, 9, 78, 5, 6, 113, 0, 190, 55, 15, 14, 13};
+//        Integer[] b = new Integer[]{99, 101, 2, 66, 11, 9, 78, 5, 6, 113, 0, 190, 55, 15, 14, 13};
 //        Integer[] temp = new Integer[b.length];
-        QuickSort.sort(b);
-        show(b);
+//        QuickSort.sort(b);
+//        show(b);
 //        System.out.println((-2)>>>1);
 //        System.out.println(Integer.MAX_VALUE);
 //        System.out.println(3&5);
+
+        BST bst = new BST();
+        Random random = new Random();
+
+        for (int i = 0; i < 10; i++) {
+            int r = random.nextInt(20);
+            System.out.println(r);
+            bst.insertNode(r);
+        }
+        System.out.println("!!!!!!!!!!");
+        bst.printTree();
+
+        System.out.println("min" + bst.findMin());
+
+        System.out.println("max" + bst.findMax());
+
+        System.out.println("height:" + bst.getHeight());
+
+        System.out.println("nodesNo:" + bst.getNumberOfNodes());
 
 
     }
