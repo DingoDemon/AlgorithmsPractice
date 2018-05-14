@@ -7,17 +7,44 @@ public class BSTNode implements BSTNodeInterface {
     private Comparable element;
     private BSTNode parent;
 
+    public BSTNode getParent() {
+        return parent;
+    }
 
+
+    /**
+     * 构造根节点
+     *
+     * @param element
+     */
     public BSTNode(Comparable element) {
         this(null, null, element, null);
     }
 
+    /**
+     * 构造子节点
+     *
+     * @param left
+     * @param right
+     * @param element
+     * @param parent
+     */
     public BSTNode(BSTNode left, BSTNode right, Comparable element, BSTNode parent) {
         this.left = left;
         this.right = right;
         this.element = element;
         this.parent = parent;
     }
+
+    @Override
+    public void setParent(BSTNodeInterface nodeInterface) {
+        this.parent = (BSTNode) nodeInterface;
+    }
+
+    public void setParent(BSTNode parent) {
+        this.parent = parent;
+    }
+
 
     @Override
     public Comparable getData() {
@@ -63,7 +90,7 @@ public class BSTNode implements BSTNodeInterface {
     public boolean isLeaf() {
         return (!hasLeftChild()) && (!hasRightChild());
     }
-    
+
 
     @Override
     public int getNumberOfNodes() {
@@ -71,18 +98,22 @@ public class BSTNode implements BSTNodeInterface {
     }
 
     private int getNumberOfNodes(BSTNode node) {
-        int leftNumber = 0;
-        int rightNumber = 0;
+        if (node != null) {
+            int leftNumber = 0;
+            int rightNumber = 0;
 
-        if (left != null) {
-            leftNumber = left.getNumberOfNodes();
+            if (hasLeftChild()) {
+                leftNumber = left.getNumberOfNodes();
+            }
+
+            if (hasRightChild()) {
+                rightNumber = right.getNumberOfNodes();
+            }
+
+            return 1 + leftNumber + rightNumber;
+        }else{
+            return 0;
         }
-
-        if (right != null) {
-            rightNumber = right.getNumberOfNodes();
-        }
-
-        return 1 + leftNumber + rightNumber;
     }
 
     @Override

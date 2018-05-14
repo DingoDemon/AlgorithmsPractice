@@ -54,12 +54,15 @@ public class Example {
         BST bst = new BST();
         Random random = new Random();
 
+        int deleteNo = 5;
+
         for (int i = 0; i < 10; i++) {
             int r = random.nextInt(20);
-            System.out.println(r);
+            System.out.println(""+r);
             bst.insertNode(r);
         }
         System.out.println("!!!!!!!!!!");
+
         bst.printTree();
 
         System.out.println("min" + bst.findMin());
@@ -69,6 +72,10 @@ public class Example {
         System.out.println("height:" + bst.getHeight());
 
         System.out.println("nodesNo:" + bst.getNumberOfNodes());
+
+        bst.deleteNode(deleteNo);
+        System.out.println("!!!!!!!!!!");
+        bst.printTree();
 
 
     }

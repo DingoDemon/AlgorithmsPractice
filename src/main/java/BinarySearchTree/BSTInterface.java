@@ -1,5 +1,7 @@
 package BinarySearchTree;
 
+import java.util.Iterator;
+
 public interface BSTInterface extends TreeInterface {
 
     void insertNode(Comparable comparable);
@@ -15,6 +17,15 @@ public interface BSTInterface extends TreeInterface {
 
     Comparable findMin();
 
+
+
+    public Iterator<BSTNodeInterface> getPreorderIterator();//前序遍历
+
+    public Iterator<BSTNodeInterface> getPostorderIterator();//中序遍历
+
+    public Iterator<BSTNodeInterface> getInorderIterator();//后续遍历
+
+    public Iterator<BSTNodeInterface> getLevelOrderIterator();//广度遍历
 
 
 }
